@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BMLUXE Events | Where Love is the Main Event</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2724;--mute:#8f8a82;--stone:#f3f2ee;--line:#dcd8d0;--gold:#a48556;--wine:#5a1d2c;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Montserrat",Arial,sans-serif;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#2b2724}}
+:root[data-theme="dark"]{--ink:#2b2724}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:14px/1.9 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;font-style:italic;margin:0;line-height:1.12}
+.sp{letter-spacing:.3em;text-transform:uppercase;font-size:11px;font-weight:500}
+.lnk{display:inline-block;border-bottom:1px solid currentColor;padding-bottom:4px}
+.lnk:hover{color:var(--gold)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);color:#fff;transition:background .3s,color .3s,box-shadow .3s}
+header.solid{background:#fff;color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:26px 48px}
+header.solid .bar{padding:16px 48px}
+.logo{font-family:var(--serif);font-style:italic;font-size:32px;line-height:1}
+.logo small{display:block;font:500 8px var(--sans);letter-spacing:.4em;margin-top:2px;opacity:.8}
+nav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0}
+nav a{opacity:.85}nav a:hover{opacity:1;color:var(--gold)}
+.burger{background:none;border:0;cursor:pointer;color:inherit;width:36px;height:24px;display:grid;gap:7px;align-content:center;padding:0}
+.burger i{display:block;height:1px;background:currentColor}
+.burger i:nth-child(2){width:70%;margin-left:auto}
+/* side area */
+.side{position:fixed;top:0;right:0;bottom:0;width:min(380px,100%);background:var(--stone);z-index:80;padding:60px 44px;transform:translateX(100%);transition:transform .5s;overflow:auto}
+.side.open{transform:none}
+.side p{color:var(--mute)}.side ul{list-style:none;padding:0;display:grid;gap:14px;margin:30px 0}
+.x{position:absolute;top:20px;right:24px;background:none;border:0;font-size:30px;cursor:pointer;color:var(--ink)}
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .4s;z-index:70}
+.shade.on{opacity:1;pointer-events:auto}
+/* hero slider */
+.hero{position:relative;height:100vh;min-height:560px;overflow:hidden;color:#fff}
+.slide{position:absolute;inset:0;display:grid;place-items:center;text-align:center;opacity:0;transition:opacity 1.2s;padding:0 24px}
+.slide.on{opacity:1}
+.slide::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.05) 0 16px,transparent 16px 44px)}
+.s1{background:linear-gradient(160deg,#3d1120,#7a2e3f 55%,#c48b78)}
+.s2{background:linear-gradient(160deg,#2a261f,#6b5535 55%,#d3bd8c)}
+.s3{background:linear-gradient(160deg,#233a2d,#587a63 55%,#cfd8c4)}
+.slide>div{position:relative;z-index:2}
+.slide h2{font-size:clamp(46px,8vw,118px);margin:14px 0 34px}
+.slide .lnk{color:#fff}
+.dots{position:absolute;right:48px;top:50%;transform:translateY(-50%);display:grid;gap:14px;z-index:5}
+.dots button{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:transparent;padding:0;cursor:pointer}
+.dots button.on{background:#fff}
+.scroll{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:5;text-align:center;font-size:10px}
+.scroll i{display:block;width:1px;height:44px;background:#fff;margin:10px auto 0;animation:drop 2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* intro */
+.intro{padding:150px 0 120px;text-align:center}
+.intro h2{font-size:clamp(34px,4.8vw,66px);max-width:900px;margin:0 auto 34px}
+.sig{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold)}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px;align-items:center;padding:60px 0}
+.pic{min-height:420px;position:relative}
+.pic::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.08) 0 12px,transparent 12px 36px)}
+.pa{background:linear-gradient(160deg,#f1e6df,#c58f80)}
+.pb{background:linear-gradient(160deg,#e8e6df,#85827a)}
+.pc{background:linear-gradient(160deg,#efe3c8,#a98b55)}
+.svc .pic{grid-column:1/7}.svc .txt{grid-column:8/13}
+.svc.rev .pic{grid-column:7/13;grid-row:1}.svc.rev .txt{grid-column:1/6;grid-row:1}
+.txt .sp{color:var(--gold)}
+.txt h3{font-size:clamp(36px,4vw,56px);margin:12px 0 20px}
+.txt p{color:var(--mute);margin:0 0 24px}
+/* testimonials */
+.testi{background:var(--stone);padding:130px 0;text-align:center;margin-top:60px}
+.tq{display:none;max-width:860px;margin:0 auto;padding:0 24px}
+.tq.on{display:block;animation:fade .9s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.tq .sp{color:var(--gold)}
+.tq h3{font-size:clamp(26px,3.2vw,42px);margin:20px 0 26px;line-height:1.3}
+.tq small{color:var(--mute)}
+.tdots{display:flex;gap:12px;justify-content:center;margin-top:44px}
+.tdots button{width:28px;height:2px;border:0;background:var(--line);cursor:pointer;padding:0}
+.tdots button.on{background:var(--ink)}
+/* tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr}
+.tile{position:relative;min-height:560px;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
+.tile::before{content:"";position:absolute;inset:0;background:inherit;transition:transform .8s}
+.tile:hover::before{transform:scale(1.05)}
+.tile>div{position:relative}
+.tile h4{font-size:clamp(34px,4vw,54px);margin:10px 0 22px}
+.ta{background:linear-gradient(160deg,#3d1120,#a14a5c)}
+.tb{background:linear-gradient(160deg,#2a261f,#a48556)}
+/* expert */
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center}
+.exp .pic{min-height:620px;background:linear-gradient(160deg,#d9c8a8,#7a2e3f)}
+.exp .txt{padding:80px 8vw}
+/* cta */
+.cta{background:var(--wine);color:#fff;text-align:center;padding:150px 24px;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.05) 0 16px,transparent 16px 44px)}
+.cta>*{position:relative}
+.cta h2{font-size:clamp(42px,6vw,88px);margin:16px 0 38px}
+.cta button{background:none;border:1px solid #fff;color:#fff;padding:18px 40px;cursor:pointer;font-family:var(--sans)}
+.cta button:hover{background:#fff;color:var(--wine)}
+/* blog */
+.blog{padding:130px 0 90px}
+.blog h2{font-size:clamp(36px,4.6vw,62px);text-align:center;margin-bottom:64px}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:50px 32px}
+.post .im{aspect-ratio:4/3;margin-bottom:22px;overflow:hidden}
+.post .im i{display:block;height:100%;transition:transform .7s}
+.post:hover .im i{transform:scale(1.06)}
+.post h4{font-size:27px;margin:6px 0 14px}
+.post .sp{color:var(--gold)}
+/* clients */
+.clients{border-top:1px solid var(--line);padding:70px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.mono{font:italic 44px/1 var(--serif);color:#c4c7b4;transition:color .3s}
+.mono:hover{color:var(--gold)}
+.mono small{display:block;font:500 9px var(--sans);letter-spacing:.34em;margin-top:10px;text-transform:uppercase}
+/* footer */
+footer{background:var(--stone);padding:90px 0 40px}
+.fg{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:50px}
+footer ul{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:22px}
+footer li a{color:var(--mute)}footer li a:hover{color:var(--ink)}
+footer h4{font-size:30px;max-width:300px;margin-bottom:34px}
+.join{display:flex;border-bottom:1px solid var(--ink);max-width:300px}
+.join input{flex:1;border:0;background:none;padding:10px 0;font:inherit;color:var(--ink)}
+.join button{background:none;border:0;font:600 11px var(--sans);letter-spacing:.3em;cursor:pointer;color:var(--ink)}
+.note{min-height:1.6em;color:var(--gold);margin-top:8px}
+.copy{margin-top:70px;color:var(--mute);font-size:11px;letter-spacing:.08em}
+.top{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:54px;height:54px;border:0;background:rgba(200,200,190,.85);cursor:pointer;display:grid;place-items:center;z-index:40;opacity:0;pointer-events:none;transition:opacity .3s}
+.top.on{opacity:1;pointer-events:auto}
+.top svg{width:22px;stroke:#fff;fill:none;stroke-width:1.4}
+/* dialog */
+dialog{border:0;padding:50px 44px;width:min(560px,92vw);background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog h3{font-size:40px;margin-bottom:26px}
+form.f{display:grid;gap:22px}
+.f label span{display:block;color:var(--mute);margin-bottom:2px}
+.f input,.f select,.f textarea{width:100%;background:none;border:0;border-bottom:1px solid var(--ink);padding:8px 0;font:inherit;color:var(--ink);border-radius:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.f .btn{justify-self:start;background:none;border:0;border-bottom:1px solid var(--ink);cursor:pointer;font-family:var(--sans);padding:6px 0;color:var(--ink)}
+.hero .slide.on h2,.hero .slide.on .sp{animation:rise 1.2s both}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:960px){
+.bar,header.solid .bar{padding:16px 22px}nav{display:none}.dots{right:18px}
+.wrap{padding:0 24px}.intro{padding:90px 0 60px}
+.svc,.svc.rev{display:block;padding:30px 0}.svc .pic{min-height:300px;margin-bottom:30px}.svc .txt{padding:0 0 30px}
+.tiles,.exp,.posts,.fg{grid-template-columns:1fr}.tile{min-height:380px}.exp .pic{min-height:360px}.exp .txt{padding:60px 24px}
+.clients{grid-template-columns:1fr 1fr}.cta{padding:100px 24px}}
+</style>
+</head>
+<body>
+<header id="hd">
+<div class="bar">
+<a href="#top" class="logo">BMLUXE<small>EVENTS</small></a>
+<nav aria-label="Main"><ul class="sp">
+<li><a href="#weddings">Weddings</a></li><li><a href="#corporate">Corporate</a></li><li><a href="#events">Events</a></li><li><a href="#journal">Journal</a></li><li><a href="#about">About us</a></li><li><a href="#contact" data-req>Contact us</a></li>
+</ul></nav>
+<button class="burger" id="burger" aria-label="Open menu"><i></i><i></i><i></i></button>
+</div>
+</header>
+
+<aside class="side" id="side" aria-label="Menu">
+<button class="x" id="close" aria-label="Close menu">×</button>
+<a href="#top" class="logo">BMLUXE Events</a>
+<p style="margin-top:24px">Strategy, design and seamless execution. Where love is the main event.</p>
+<ul class="sp"><li><a href="#weddings">Weddings</a></li><li><a href="#corporate">Corporate</a></li><li><a href="#events">Events</a></li><li><a href="#journal">Journal</a></li><li><a href="#about">About us</a></li></ul>
+<ul class="sp"><li><a href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://linktr.ee/bmluxeevents" target="_blank" rel="noopener">Linktree</a></li><li><a href="mailto:Hello@bmluxeevents.com">Hello@bmluxeevents.com</a></li></ul>
+</aside>
+<div class="shade" id="shade"></div>
+
+<main id="top">
+<section class="hero" aria-label="Featured">
+<div class="slide s1 on"><div><span class="sp">Make it special</span><h2>Weddings &amp; Celebrations</h2><a class="lnk sp" href="#weddings">Read more</a></div></div>
+<div class="slide s2"><div><span class="sp">Make it special</span><h2>Corporate Gatherings</h2><a class="lnk sp" href="#corporate">Read more</a></div></div>
+<div class="slide s3"><div><span class="sp">Make it special</span><h2>Seamless Event Experience</h2><a class="lnk sp" href="#events">Read more</a></div></div>
+<div class="dots" id="dots"></div>
+<div class="scroll sp">Scroll<i></i></div>
+</section>
+
+<section class="intro" id="about"><div class="wrap">
+<h2>Celebrate your important moments with the BMLUXE team.</h2>
+<p style="max-width:540px;margin:0 auto 26px;color:var(--mute)">We plan the strategy, design the room and run the day, so you can be in every moment of it.</p>
+<div class="sig">BMLUXE Events</div>
+</div></section>
+
+<section class="wrap" id="events">
+<div class="svc" id="weddings"><div class="pic pa"></div><div class="txt"><span class="sp">Planning</span><h3>Weddings</h3><p>Full planning, styling and day-of coordination for traditional and white weddings. One calm team from first idea to last dance.</p><a class="lnk sp" href="#contact" data-req>Read more</a></div></div>
+<div class="svc rev" id="corporate"><div class="pic pb"></div><div class="txt"><span class="sp">Planning</span><h3>Corporate parties</h3><p>Launches, dinners and award nights, run to the minute and styled to your brand.</p><a class="lnk sp" href="#contact" data-req>Read more</a></div></div>
+<div class="svc"><div class="pic pc"></div><div class="txt"><span class="sp">Styling</span><h3>Social events</h3><p>Milestone birthdays, engagements and private parties with a designed look from the entrance to the tables.</p><a class="lnk sp" href="#contact" data-req>Read more</a></div></div>
+</section>
+
+<section class="testi" aria-label="Testimonials">
+<div class="tq on"><span class="sp">Sample testimonial</span><h3>“Every detail felt calm, and the room looked exactly like us.”</h3><small>Replace with a real client</small></div>
+<div class="tq"><span class="sp">Sample testimonial</span><h3>“Our guests are still talking about the draping and the entrance.”</h3><small>Replace with a real client</small></div>
+<div class="tq"><span class="sp">Sample testimonial</span><h3>“They ran the whole evening, and we never had to ask twice.”</h3><small>Replace with a real client</small></div>
+<div class="tdots" id="tdots"></div>
+</section>
+
+<section class="tiles">
+<a class="tile ta" href="#contact" data-req><div><span class="sp">Event</span><h4>Fabulous evening</h4><span class="lnk sp">Read more</span></div></a>
+<a class="tile tb" href="#contact" data-req><div><span class="sp">Styling</span><h4>Beautiful &amp; seamless</h4><span class="lnk sp">Read more</span></div></a>
+</section>
+
+<section class="exp">
+<div class="pic"></div>
+<div class="txt"><span class="sp">Meet the planners</span><h3>Strategy, design, seamless execution</h3><p>Your plan, your look and your timeline are built by the same team, so nothing gets lost between the idea and the day.</p><p>Tell us the date, the guest count and the feeling you want, and we will come back with a clear plan.</p><a class="lnk sp" href="#contact" data-req>Get in touch</a></div>
+</section>
+
+<section class="cta" id="contact">
+<span class="sp">Ready to get in touch?</span>
+<h2>Make an event request</h2>
+<button class="sp" data-req>Get in touch</button>
+</section>
+
+<section class="blog wrap" id="journal">
+<h2>From the journal</h2>
+<div class="posts">
+<a class="post" href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener"><div class="im"><i style="background:linear-gradient(150deg,#4b1626,#c48b78)"></i></div><span class="sp">Weddings</span><h4>Draping ideas for a wine and blush reception</h4><span class="lnk sp">Read more</span></a>
+<a class="post" href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener"><div class="im"><i style="background:linear-gradient(150deg,#2a261f,#d3bd8c)"></i></div><span class="sp">Planning</span><h4>How to build an event timeline that holds</h4><span class="lnk sp">Read more</span></a>
+<a class="post" href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener"><div class="im"><i style="background:linear-gradient(150deg,#233a2d,#cfd8c4)"></i></div><span class="sp">Styling</span><h4>Garden arches and greenery that photograph well</h4><span class="lnk sp">Read more</span></a>
+<a class="post" href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener"><div class="im"><i style="background:linear-gradient(150deg,#6c5a3b,#efe3c8)"></i></div><span class="sp">Corporate</span><h4>Planning a brand launch dinner, step by step</h4><span class="lnk sp">Read more</span></a>
+<a class="post" href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener"><div class="im"><i style="background:linear-gradient(150deg,#7a2e3f,#f1e6df)"></i></div><span class="sp">Weddings</span><h4>Choosing a colour story with your planner</h4><span class="lnk sp">Read more</span></a>
+<a class="post" href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener"><div class="im"><i style="background:linear-gradient(150deg,#3b3a35,#a48556)"></i></div><span class="sp">Styling</span><h4>Lighting a ballroom for evening ceremonies</h4><span class="lnk sp">Read more</span></a>
+</div>
+</section>
+
+<section class="clients wrap" aria-label="Celebrations">
+<div class="mono">A&amp;U<small>Always been us</small></div>
+<div class="mono">K&amp;G<small>Ever after</small></div>
+<div class="mono">A&amp;A<small>Aisha &amp; Abu</small></div>
+<div class="mono">F&amp;A<small>Your name next</small></div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<div class="fg">
+<div><a href="#top" class="logo" style="font-size:38px">BMLUXE Events</a>
+<ul class="sp"><li><a href="#weddings">Weddings</a></li><li><a href="#corporate">Corporate</a></li><li><a href="#events">Events</a></li><li><a href="#about">About us</a></li><li><a href="#contact" data-req>Contact</a></li></ul></div>
+<div><div style="height:64px"></div><ul class="sp" style="margin-top:0"><li><a href="https://www.instagram.com/bmluxeevents" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://linktr.ee/bmluxeevents" target="_blank" rel="noopener">Linktree</a></li><li><a href="mailto:Hello@bmluxeevents.com">Email</a></li></ul></div>
+<div><h4>Receive updates &amp; special announcements</h4>
+<form class="join" id="join"><input type="email" placeholder="Email…" aria-label="Email" required><button type="submit">JOIN</button></form>
+<div class="note" role="status" id="jn"></div></div>
+</div>
+<div class="copy">© 2026 BMLUXE Events. Seamless event experience.</div>
+</div></footer>
+
+<button class="top" id="top-btn" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M4 16l8-8 8 8"/></svg></button>
+
+<dialog id="dlg">
+<form method="dialog" style="text-align:right"><button class="x" aria-label="Close">×</button></form>
+<h3>Make an event request</h3>
+<form class="f" id="enq">
+<label><span class="sp">Name</span><input name="name" required autocomplete="name"></label>
+<label><span class="sp">Email</span><input type="email" name="email" required autocomplete="email"></label>
+<label><span class="sp">Event type</span><select name="type"><option>Wedding</option><option>Corporate party</option><option>Social event</option></select></label>
+<label><span class="sp">Date</span><input type="date" name="date"></label>
+<label><span class="sp">Your vision</span><textarea name="msg" rows="3"></textarea></label>
+<button class="btn sp" type="submit">Send request</button>
+<div class="note" role="status" id="en"></div>
+</form>
+</dialog>
+
+<script>
+var $=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var hd=document.getElementById('hd'),tb=document.getElementById('top-btn');
+function sc(){hd.classList.toggle('solid',scrollY>80);tb.classList.toggle('on',scrollY>600)}
+addEventListener('scroll',sc,{passive:true});sc();
+tb.onclick=function(){scrollTo({top:0})};
+/* side area */
+var side=document.getElementById('side'),shade=document.getElementById('shade');
+function so(o){side.classList.toggle('open',o);shade.classList.toggle('on',o)}
+document.getElementById('burger').onclick=function(){so(true)};
+document.getElementById('close').onclick=shade.onclick=function(){so(false)};
+$('#side a').forEach(function(a){a.addEventListener('click',function(){so(false)})});
+/* slider helper */
+function slider(items,dotBox,ms,mk){
+var i=0,t,dots=items.map(function(_,n){var b=document.createElement('button');b.setAttribute('aria-label','Slide '+(n+1));b.onclick=function(){go(n);reset()};dotBox.appendChild(b);return b});
+function go(n){i=n;items.forEach(function(e,k){e.classList.toggle('on',k===n)});dots.forEach(function(d,k){d.classList.toggle('on',k===n)})}
+function reset(){clearInterval(t);t=setInterval(function(){go((i+1)%items.length)},ms)}
+go(0);reset();return mk&&mk.addEventListener&&(mk.addEventListener('mouseenter',function(){clearInterval(t)}),mk.addEventListener('mouseleave',reset))}
+slider($('.slide'),document.getElementById('dots'),6000);
+slider($('.tq'),document.getElementById('tdots'),7000,document.querySelector('.testi'));
+/* request dialog */
+var dlg=document.getElementById('dlg');
+$('[data-req]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();so(false);dlg.showModal()})});
+document.getElementById('enq').addEventListener('submit',function(e){
+e.preventDefault();var f=new FormData(e.target);
+var body='Name: '+f.get('name')+'\nEmail: '+f.get('email')+'\nEvent: '+f.get('type')+'\nDate: '+f.get('date')+'\n\n'+f.get('msg');
+document.getElementById('en').textContent='Opening your email app to send the request.';
+location.href='mailto:Hello@bmluxeevents.com?subject='+encodeURIComponent('Event request from '+f.get('name'))+'&body='+encodeURIComponent(body)});
+document.getElementById('join').addEventListener('submit',function(e){
+e.preventDefault();var v=e.target.querySelector('input').value;
+document.getElementById('jn').textContent='Opening your email app to confirm.';
+location.href='mailto:Hello@bmluxeevents.com?subject='+encodeURIComponent('Join updates list')+'&body='+encodeURIComponent('Please add me: '+v)});
+</script>
+</body>
+</html>
